@@ -1,0 +1,31 @@
+def print_depth(d, start=0):
+    for key, value in d.items():
+        print(key, start + 1)
+        if isinstance(value, dict):
+            print_depth(value, start=start+1)
+
+
+a = {
+    "key1": 1,
+    "key2": {
+        "key3": 1,
+        "key4": {
+            "key5": 4,
+                "user": 'person_b',
+        }
+    },
+}
+
+print_depth(a)
+
+
+def foo(first, second, third, fourth, fifth, sixth, seventh):
+    print("user: %s" %(first))
+    print("first_name: %s" %(second))
+    print("last_name: %s" %(third))
+    print("father: %s" %(fourth))
+    print("first_name: %s" %(fifth))
+    print("last_name: %s" %(sixth))
+    print("father: %s" %(seventh))
+
+foo(3,4,4,4,5,5,5)
